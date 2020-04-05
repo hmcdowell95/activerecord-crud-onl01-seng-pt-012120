@@ -35,7 +35,7 @@ end
 
 def can_get_the_first_item_in_the_database
   sql = <<-SQL
-  SELECT * FROM movies WHERE id = 1
+  SELECT * FROM movies LIMIT 1
   SQL
   
 end
