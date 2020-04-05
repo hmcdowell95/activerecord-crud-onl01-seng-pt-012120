@@ -20,7 +20,7 @@ def can_be_created_with_a_hash_of_attributes
       lead: "Paul Newman",
       in_theaters: false
   }
-  movie = Movie.new(attributes)
+  movie = Movie.create(attributes)
 end
 
 def can_be_created_in_a_block(args = __)
@@ -37,7 +37,7 @@ def can_get_the_first_item_in_the_database
   sql = <<-SQL
   SELECT * FROM movies LIMIT 1
   SQL
-  DB[:conn].execute(sql)
+  :movies.execute(sql)
 end
 
 def can_get_the_last_item_in_the_database
