@@ -37,7 +37,7 @@ def can_get_the_first_item_in_the_database
   sql = <<-SQL
   SELECT * FROM movies LIMIT 1
   SQL
-  
+  ActiveRecord::Base.connection.execute(sql)
 end
 
 def can_get_the_last_item_in_the_database
