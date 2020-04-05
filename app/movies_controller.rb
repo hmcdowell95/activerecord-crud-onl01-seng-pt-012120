@@ -38,7 +38,7 @@ def can_get_the_first_item_in_the_database
   SELECT * FROM movies LIMIT 1
   SQL
   a = ActiveRecord::Base.connection.execute(sql)
-  Movie.
+  Movie.new_from_db(a)
 end
 
 def can_get_the_last_item_in_the_database
@@ -58,7 +58,7 @@ def can_find_by_multiple_attributes
   # title == "Title"
   # release_date == 2000
   # director == "Me"
-  Movie.find_by(v)
+  Movie.find_by
 end
 
 def can_find_using_where_clause_and_be_sorted
